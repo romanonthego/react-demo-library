@@ -2,12 +2,13 @@
   "name": "react-demo-library",
   "version": "0.0.0",
   "description": "A React component that helps you to build a library of react-demo demos",
-  "main": "lib/index.js",
+  "main": "lib/Library.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf lib && babel src --out-dir lib",
+    "build": "rm -rf lib && BABEL_ENV=build babel src --out-dir lib",
     "preversion": "npm run build",
-    "postversion": "git push && git push origin --tags && npm publish"
+    "postversion": "git push && git push origin --tags && npm publish",
+    "example": "heatpack example/index.js"
   },
   "files": [
     "lib"
@@ -37,12 +38,19 @@
     "react-heatpack": "3.0.1"
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ],
-    "plugins": [
-      "transform-object-rest-spread"
-    ]
+    "env": {
+      "build": {
+        "presets": [
+          "es2015",
+          "react"
+        ],
+        "plugins": [
+          "transform-object-rest-spread"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "ramda": "0.19.1"
   }
 }
