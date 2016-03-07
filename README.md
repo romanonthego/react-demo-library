@@ -52,3 +52,5 @@ ReactDOM.render(
   document.getElementById('app')
 )
 ```
+
+![](http://g.recordit.co/fGbXqKw56R.gif)

@@ -14,4 +14,3 @@ const demos = context.keys().map(path => {
 })
 
 export default <Library demos={demos} />
-

@@ -1,12 +1,17 @@
 import React, {PropTypes as T} from 'react'
 import Layout from './Layout'
 import Router from './Router'
+import DemoPage from './DemoPage'
 import mountGlobalStyles from './globalStyles'
 
 mountGlobalStyles()
 
 function locationToHash(location) {
   return `/${location.map(encodeURIComponent).join('/')}/`
+}
+
+function locationToTitle(location) {
+  return `${location.slice().reverse().join(' \\ ')} — Components Library`
 }
 
 export default React.createClass({
@@ -22,19 +27,22 @@ export default React.createClass({
     )
     const routes = demos.map(
       spec => ({
+        title: locationToTitle(spec.location),
         hash: locationToHash(spec.location),
         content: <Layout menu={menu} fullWidth={spec.fullWidth}>
-          {spec.demo}
+          <DemoPage {...spec} />
         </Layout>,
       })
     ).concat([{
+      title: 'Components Library',
       hash: '',
-      content: <Layout menu={menu} fullWidth={false}>
+      content: <Layout menu={menu}>
         ← Use menu to start exploring the library
       </Layout>,
     }])
     const notFoundRoute = {
-      content: <Layout menu={menu} fullWidth={false}>404</Layout>,
+      title: '404 — Components Library',
+      content: <Layout menu={menu}>404</Layout>,
     }
     return <Router routes={routes} notFoundRoute={notFoundRoute} />
   },

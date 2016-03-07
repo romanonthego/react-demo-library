@@ -32,7 +32,15 @@ export default React.createClass({
   },
 
   render() {
-    return this.getCurrentRoute().content
+    const route = this.getCurrentRoute()
+
+    // don't do that at work
+    document.title = route.title
+
+
+    // this is even dirtier, we know that `route.content` always a <Layout>
+    // element, so we just push additional prop to it. Tight coupling FTW.
+    return React.cloneElement(route.content, {currentHash: route.hash})
   },
 
 })
