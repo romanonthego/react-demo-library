@@ -40,7 +40,7 @@ export default React.createClass({
 
     // this is even dirtier, we know that `route.content` always a <Layout>
     // element, so we just push additional prop to it. Tight coupling FTW.
-    return React.cloneElement(route.content, {currentHash: route.hash})
+    return React.cloneElement(route.content, {currentHash: route.hash, key: route.hash})
   },
 
 })
