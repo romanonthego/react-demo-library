@@ -1,7 +1,7 @@
 import React, {PropTypes as T} from 'react'
 import {groupBy, values, tail, unnest} from 'ramda'
 
-const MENU_WIDTH = 250
+const MENU_WIDTH = 180
 
 const styles = {
   wrap: {
@@ -14,15 +14,15 @@ const styles = {
     cursor: 'pointer',
   },
   menuBtnBar: {
-    background: '#bbb',
-    width: 25,
-    height: 4,
+    background: '#000',
+    width: 15,
+    height: 2,
     borderRadius: 1,
     marginBottom: 3,
   },
   menu({topLevel}) {
     return {
-      fontFamily: 'helvetica, arial, sans-serif',
+      fontFamily: '"Lucida Grande", Helvetica, arial, sans-serif',
       marginLeft: 6,
       paddingLeft: 4,
     }
@@ -48,19 +48,18 @@ const styles = {
   },
   nodeName: {
     margin: '2px 0',
-    fontSize: '14px',
+    fontSize: '12px',
+    lineHeight: '20px',
     fontWeight: 'bold',
     color: '#000',
-    marginTop: '12px',
-    marginBottom: '6px',
   },
   leaf({current}) {
     return {
       display: 'block',
       textDecoration: 'none',
       color: 'black',
-      fontSize: '13px',
-      lineHeight: '17px',
+      fontSize: '12px',
+      lineHeight: '20px',
       margin: '2px 0',
       textDecoration: current ? 'underline' : 'none',
     }
