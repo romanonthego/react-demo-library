@@ -40,7 +40,8 @@ const styles = {
       boxSizing: 'border-box',
       padding: '20px 10px',
       overflow: 'auto',
-      transition: 'left .25s'
+      transition: 'left .25s',
+      zIndex: 1000,
     }
   },
   node: {
