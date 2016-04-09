@@ -56,7 +56,7 @@ export default React.createClass({
     fullWidth: T.bool,
     location: T.array.isRequired,
     importPath: T.string,
-    description: T.string, // TODO: markdown support
+    description: T.node,
   },
 
   render() {
