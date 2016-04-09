@@ -140,7 +140,7 @@ export default React.createClass({
     menu: T.arrayOf(T.object.isRequired).isRequired,
     children: T.node,
     fullWidth: T.bool,
-    currentHash: T.string.isRequired,
+    currentHash: T.string,
   },
 
   getInitialState() {
