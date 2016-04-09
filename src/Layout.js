@@ -23,7 +23,6 @@ const styles = {
   menu({topLevel}) {
     return {
       fontFamily: 'helvetica, arial, sans-serif',
-      borderLeft: topLevel ? 'none' : 'solid 1px #ddd',
       marginLeft: 6,
       paddingLeft: 4,
     }
@@ -50,16 +49,20 @@ const styles = {
   nodeName: {
     margin: '2px 0',
     fontSize: '14px',
-    color: '#939393',
+    fontWeight: 'bold',
+    color: '#000',
+    marginTop: '12px',
+    marginBottom: '6px',
   },
   leaf({current}) {
     return {
       display: 'block',
       textDecoration: 'none',
       color: 'black',
-      fontSize: '14px',
+      fontSize: '13px',
+      lineHeight: '17px',
       margin: '2px 0',
-      fontWeight: current ? 'bold' : 'normal',
+      textDecoration: current ? 'underline' : 'none',
     }
   },
   content({fullWidth}) {
