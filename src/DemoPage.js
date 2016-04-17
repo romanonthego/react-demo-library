@@ -2,7 +2,7 @@ import React, {PropTypes as T} from 'react'
 import {unnest, last} from 'ramda'
 
 const MONO_FONT = 'Menlo, Monaco, Consolas, "Lucida Console", monospace'
-const SERIF_FONT = 'helvetica, arial, sans-serif'
+const SERIF_FONT = '"Lucida Grande", Helvetica, arial, sans-serif'
 
 const styles = {
   metaWrap({fullWidth}) {
@@ -11,14 +11,13 @@ const styles = {
     }
   },
   location: {
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: SERIF_FONT,
-    color: '#666',
+    color: '#aaa',
     marginBottom: 10,
   },
   locationItem({last}) {
     return {
-      fontSize: last ? 24 : 'inerit',
       color: last ? '#000' : 'inerit',
     }
   },
@@ -38,7 +37,26 @@ const styles = {
     marginBottom: 10,
     fontFamily: SERIF_FONT,
     fontSize: 14,
-  }
+  },
+  files({fullWidth}) {
+    return {
+      margin: fullWidth ? '20px 10px' : '20px 0',
+    }
+  },
+  fileName: {
+    fontFamily: SERIF_FONT,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  fileContnet: {
+    fontFamily: MONO_FONT,
+    fontSize: 12,
+    margin: '5px 0 20px 0',
+    background: '#f5fef5',
+    padding: 5,
+    borderRadius: 3,
+    overflow: 'auto',
+  },
 }
 
 function locationItem(name, i, {length}) {
@@ -62,10 +80,8 @@ export default React.createClass({
 
   renderFile(file, index) {
     return <div key={index}>
-      <h4>{file.name}</h4>
-      <pre>
-        {file.content}
-      </pre>
+      <div style={styles.fileName}>{file.name}</div>
+      <pre style={styles.fileContnet}>{file.content}</pre>
     </div>
   },
 
@@ -88,7 +104,7 @@ export default React.createClass({
         {demo}
       </div>
       {
-        files && <div>
+        files && <div style={styles.files({fullWidth})}>
           {files.map(this.renderFile)}
         </div>
       }

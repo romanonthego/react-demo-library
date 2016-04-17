@@ -12,11 +12,11 @@ const demos = context.keys().map(path => {
   const name = R.last(importPath.split('/'))
   const files = []
   const rawKeys = rawContext.keys()
-  if (rawKeys.indexOf(path) !== -1) {
-    files.push({name: `${name}.demo.js`, content: rawContext(path)})
-  }
   if (rawKeys.indexOf(sourcePath) !== -1) {
     files.push({name: `${name}.js`, content: rawContext(sourcePath)})
+  }
+  if (rawKeys.indexOf(path) !== -1) {
+    files.push({name: `${name}.demo.js`, content: rawContext(path)})
   }
   return {
     importPath,
