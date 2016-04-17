@@ -57,10 +57,20 @@ export default React.createClass({
     location: T.array.isRequired,
     importPath: T.string,
     description: T.node,
+    files: T.arrayOf(T.shape({name: T.string.isRequired, content: T.string.isRequired}).isRequired),
+  },
+
+  renderFile(file, index) {
+    return <div key={index}>
+      <h4>{file.name}</h4>
+      <pre>
+        {file.content}
+      </pre>
+    </div>
   },
 
   render() {
-    const {demo, fullWidth, location, importPath, description} = this.props
+    const {demo, fullWidth, location, importPath, description, files} = this.props
     const name = last(location)
     return <div>
       <div style={styles.metaWrap({fullWidth})}>
@@ -77,6 +87,11 @@ export default React.createClass({
       <div>
         {demo}
       </div>
+      {
+        files && <div>
+          {files.map(this.renderFile)}
+        </div>
+      }
     </div>
   },
 

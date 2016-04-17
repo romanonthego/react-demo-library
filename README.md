@@ -42,6 +42,9 @@ ReactDOM.render(
         // Whether component needs full width of browser window
         // to be available for it. You should also specify it in Demo: <Demo fullWidth ... />
         fullWidth: true,
+
+        // Files (will be shown on the demo page)
+        files: [{name, content}],
       },
       {
         ...
@@ -52,5 +55,3 @@ ReactDOM.render(
   document.getElementById('app')
 )
 ```
-
-![](http://g.recordit.co/fGbXqKw56R.gif)
