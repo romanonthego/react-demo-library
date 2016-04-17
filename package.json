@@ -1,6 +1,6 @@
 {
   "name": "react-demo-library",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A React component that helps you to build a library of react-demo demos",
   "main": "lib/Library.js",
   "scripts": {
