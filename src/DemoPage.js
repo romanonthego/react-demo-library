@@ -50,9 +50,9 @@ const styles = {
   },
   fileContnet: {
     fontFamily: MONO_FONT,
-    fontSize: 12,
+    fontSize: 11,
     margin: '5px 0 20px 0',
-    background: '#f5fef5',
+    background: '#d7e5ec',
     padding: 5,
     borderRadius: 3,
     overflow: 'auto',
