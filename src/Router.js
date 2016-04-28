@@ -20,7 +20,9 @@ export default React.createClass({
   },
 
   handleHashChange() {
-    this.forceUpdate()
+    this.forceUpdate(() => {
+      window.scrollTo(0, 0)
+    })
   },
 
   componentDidMount() {
