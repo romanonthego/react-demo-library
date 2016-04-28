@@ -177,7 +177,7 @@ export default React.createClass({
       <div style={styles.menuWrap({fullWidth, menuOpen})}>
         <Menu items={toTree(menu)} topLevel current={currentHash} />
       </div>
-      <div style={styles.content({fullWidth})}>
+      <div style={styles.content({fullWidth})} key={currentHash}>
         {children}
       </div>
     </div>
