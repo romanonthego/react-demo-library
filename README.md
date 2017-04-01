@@ -37,7 +37,7 @@ ReactDOM.render(
         description: "...",
 
         // Import path (will be shown on the demo page)
-        import: "foo/bar/Baz",
+        importPath: "foo/bar/Baz",
 
         // Whether component needs full width of browser window
         // to be available for it. You should also specify it in Demo: <Demo fullWidth ... />
