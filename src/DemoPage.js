@@ -74,6 +74,7 @@ export default React.createClass({
     fullWidth: T.bool,
     location: T.array.isRequired,
     importPath: T.string,
+    name: T.string,
     description: T.node,
     files: T.arrayOf(T.shape({name: T.string.isRequired, content: T.string.isRequired}).isRequired),
   },
@@ -86,8 +87,7 @@ export default React.createClass({
   },
 
   render() {
-    const {demo, fullWidth, location, importPath, description, files} = this.props
-    const name = last(location)
+    const {demo, fullWidth, location, importPath, description, files, name = last(location)} = this.props
     return <div>
       <div style={styles.metaWrap({fullWidth})}>
         <div style={styles.import}>
