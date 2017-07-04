@@ -1,4 +1,6 @@
-import React, {PropTypes as T} from 'react'
+import React from 'react'
+import createReactClass from 'create-react-class'
+import T from 'prop-types'
 import {unnest, last} from 'ramda'
 
 const MONO_FONT = 'Menlo, Monaco, Consolas, "Lucida Console", monospace'
@@ -67,7 +69,7 @@ function locationItem(name, i, {length}) {
   ]
 }
 
-export default React.createClass({
+export default createReactClass({
 
   propTypes: {
     demo: T.node,

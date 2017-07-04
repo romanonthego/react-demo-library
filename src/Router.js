@@ -1,6 +1,8 @@
-import React, {PropTypes as T} from 'react'
+import React from 'react'
+import createReactClass from 'create-react-class'
+import T from 'prop-types'
 
-export default React.createClass({
+export default createReactClass({
 
   propTypes: {
     routes: T.arrayOf(T.object.isRequired).isRequired,

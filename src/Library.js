@@ -1,4 +1,6 @@
-import React, {PropTypes as T} from 'react'
+import React from 'react'
+import createReactClass from 'create-react-class'
+import T from 'prop-types'
 import Layout from './Layout'
 import Router from './Router'
 import DemoPage from './DemoPage'
@@ -14,7 +16,7 @@ function locationToTitle(location) {
   return `${location.slice().reverse().join(' \\ ')} — Components Library`
 }
 
-export default React.createClass({
+export default createReactClass({
 
   propTypes: {
     demos: T.arrayOf(T.object.isRequired).isRequired,

@@ -1,4 +1,6 @@
-import React, {PropTypes as T} from 'react'
+import React from 'react'
+import createReactClass from 'create-react-class'
+import T from 'prop-types'
 import {groupBy, values, tail, unnest} from 'ramda'
 
 const MENU_WIDTH = 180
@@ -137,7 +139,7 @@ const Menu = props =>
     }
   </div>
 
-export default React.createClass({
+export default createReactClass({
 
   propTypes: {
     menu: T.arrayOf(T.object.isRequired).isRequired,
